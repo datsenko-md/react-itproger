@@ -1,5 +1,18 @@
-ReactDOM.render(<div>
-    <h1>Привет</h1>
-    <h2>Hello</h2>
-  </div>, document.getElementById('app'));
+const inputClick = () => console.log('Clicked');
+const mouseOver = () => console.log('Mouse Over');
+
+const helpText = 'Hello text!';
+
+const elements = (
+  <div className="name">
+    <h1>{helpText}</h1>
+    <input placeholder={helpText}
+      onClick={inputClick} onMouseOver={mouseOver}/>
+    <p>{helpText === 'Hello text!' ? 'Yes' : 'No'}</p>
+  </div>
+);
+
+const app = document.getElementById('app');
+
+ReactDOM.render(elements, app);
   
