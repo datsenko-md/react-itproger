@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDomClient from 'react-dom/client';
 
 const inputClick = () => console.log('Clicked');
 const mouseOver = () => console.log('Mouse Over');
@@ -15,6 +15,6 @@ const elements = (
   </div>
 );
 
-const app = document.getElementById('app');
+const app = ReactDomClient.createRoot(document.getElementById('app'));
 
-ReactDOM.render(elements, app);
+app.render(elements);
