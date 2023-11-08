@@ -3,6 +3,8 @@
 import React from 'react';
 
 import Header from './components/Header';
+import Image from './components/Image';
+import Prabhupada from './img/Prabhupada.jpg';
 
 class App extends React.Component {
   helpText = 'Hello text!';
@@ -26,6 +28,7 @@ class App extends React.Component {
           onMouseOver={this.mouseOver}
         />
         <p>{this.helpText === 'Hello text!' ? 'Yes' : 'No'}</p>
+        <Image image={Prabhupada} />
       </div>
     );
   }
