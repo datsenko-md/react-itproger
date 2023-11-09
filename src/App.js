@@ -7,9 +7,19 @@ import Image from './components/Image';
 import Prabhupada from './img/Prabhupada.jpg';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      helpText: 'HelpText',
+    }
+
+    this.inputClick = this.inputClick.bind(this);
+  }
+
   helpText = 'Hello text!';
 
   inputClick() {
+    this.setState({ helpText: 'CHanged' });
     console.log('Clicked');
   }
 
@@ -21,13 +31,13 @@ class App extends React.Component {
     return (
       <div className="name">
         <Header title="Шапка сайта" />
-        <h1>{this.helpText}</h1>
+        <h1>{this.state.helpText}</h1>
         <input
-          placeholder={this.helpText}
+          placeholder={this.state.helpText}
           onClick={this.inputClick}
           onMouseOver={this.mouseOver}
         />
-        <p>{this.helpText === 'Hello text!' ? 'Yes' : 'No'}</p>
+        <p>{this.state.helpText === 'Hello text!' ? 'Yes' : 'No'}</p>
         <Image image={Prabhupada} />
       </div>
     );
